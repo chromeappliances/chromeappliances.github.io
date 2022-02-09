@@ -10,28 +10,64 @@
 <link rel="stylesheet" href="https://www.chromeappliances.com/w3.css">
 <link rel="stylesheet" href="https://www.chromeappliances.com/w3-theme-blue.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+      @media (max-width: 600px) {
+        .navdesk {
+          display: none;
+        }
+      }
+      @media (min-width: 600px) {
+        .navmob {
+          display: none;
+        }
+      }
+</style>
 <body>
 
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
   <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
-  <a href="#" class="w3-bar-item w3-button">Home</a>
-  <a href="#" class="w3-bar-item w3-button">Download</a>
-  <a href="#" class="w3-bar-item w3-button">Customize</a>
-  <a href="#" class="w3-bar-item w3-button">Contact</a>
+  <a href="https://www.chromeappliances.com/" class="w3-bar-item w3-button">Home</a>
+  <button class="w3-bar-item w3-button" onclick="w3_open2();w3_close();">Download <i class="fa fa-arrow-right"></i></button>
+  <a href="https://www.chromeappliances.com/customize.html" class="w3-bar-item w3-button">Customize</a>
+  <a href="https://www.chromeappliances.com/contact.html" class="w3-bar-item w3-button">Contact Us</a>
+</nav>
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebarsecondary">
+  <button class="w3-bar-item w3-button" onclick="w3_close2()">Close <i class="fa fa-remove"></i></button>  
+  <button class="w3-bar-item w3-button" onclick="w3_open();w3_close2();">Back <i class="fa fa-arrow-left"></i></button>
+  <a href="https://www.chromeappliances.com/office.html" class="w3-bar-item w3-button">Office/Productivity Apps</a>
+  <a href="https://www.chromeappliances.com/winapp.html" class="w3-bar-item w3-button">Windows Apps</a>
+  <a href="https://www.chromeappliances.com/mm.html" class="w3-bar-item w3-button">Multimedia Apps</a>
+  <a href="https://www.chromeappliances.com/kde.html" class="w3-bar-item w3-button">KDE Apps/Store</a>
 </nav>
 
 <!-- Header -->
+
 <header class="w3-container w3-theme w3-padding" id="myHeader">
-  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+	<i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme navmob"></i>  
+  <div class="w3-bar w3-theme navdesk" style="font-size:15px;font-weight:bold;">
+  <a href="https://www.chromeappliances.com/" class="w3-bar-item w3-button w3-padding-16">Home</a>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-padding-16">
+      Download <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="https://www.chromeappliances.com/office.html" class="w3-bar-item w3-button">Office/Productivity Apps</a>
+      <a href="https://www.chromeappliances.com/winapp.html" class="w3-bar-item w3-button">Windows Apps</a>
+      <a href="https://www.chromeappliances.com/mm.html" class="w3-bar-item w3-button">Multimedia Apps</a>
+      <a href="https://www.chromeappliances.com/kde.html" class="w3-bar-item w3-button">KDE Apps/Store</a>
+    </div>
+  </div>
+	<a href="https://www.chromeappliances.com/customize.html" class="w3-bar-item w3-button w3-padding-16">Customize</a>
+	<a href="https://www.chromeappliances.com/contact.html" class="w3-bar-item w3-button w3-padding-16">Contact Us</a> 
+  </div>
   <div class="w3-center">
-  <img src="https://www.chromeappliances.com/logo.jpeg" alt="Logo" width="288" height="90">  
+  <img src="https://www.chromeappliances.com/logo.jpeg" alt="Logo" width="288" height="90" onclick="window.location='https://www.chromeappliances.com/'" style="cursor:pointer;">  </div>
 </header>
 
-<div class="w3-row w3-padding-24">
+<div class="w3-row w3-center w3-padding-24">
     <div class="w3-container">
       <h2 class="w3-text-blue-gray">Add desktop applications to Chrome OS in minutes.</h2>
-      <p>My goal is to simplify the installation of Linux applications on Chrome OS. I call this collection of applications an appliance and AIM to offer several for free consumption. This will provide users with three major benefits.</p>
     </div>
 </div>
 <br>
@@ -56,7 +92,7 @@
 </div>
 <div class="w3-third">
   <div class="w3-card w3-container" style="min-height:300px">
-  <h3>3. Basic Tools</h3><br>
+  <h3>3. Basic tools included</h3><br>
   <i class="fa fa-wrench w3-margin-bottom w3-text-theme" style="font-size:80px"></i>
   <p>Application Update utility provided.</p>
   <p>Icon refresh utility provided.</p>
@@ -66,7 +102,7 @@
 <hr>
 <!-- Footer -->
 <footer class="w3-container w3-theme-dark">
-	<p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+	<p class="w3-center"><a href="https://www.chromeappliances.com/contact.html">Contact Us</a><br><br>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
   <div style="position:relative;bottom:10px;" class="w3-tooltip w3-right">
 	 <a class="w3-text-white" href="#myHeader" title="Go To Top"><span class="w3-xlarge">
     <i class="fa fa-chevron-circle-up"></i></span></a>
@@ -78,13 +114,23 @@
 // Side navigation
 function w3_open() {
   var x = document.getElementById("mySidebar");
-  x.style.width = "100%";
-  x.style.fontSize = "40px";
+  x.style.width = "75%";
+  x.style.fontSize = "30px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_open2() {
+  var x = document.getElementById("mySidebarsecondary");
+  x.style.width = "75%";
+  x.style.fontSize = "30px";
   x.style.paddingTop = "10%";
   x.style.display = "block";
 }
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
+}
+function w3_close2() {
+  document.getElementById("mySidebarsecondary").style.display = "none";
 }
 
 // Tabs
