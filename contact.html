@@ -173,9 +173,12 @@ function move() {
 function browsercheck() {
     var ua = navigator.userAgent;
 
-    if (/Chrome/i.test(ua))
-		if (/Android/i.test(ua))
-    		alert('Chrome Browser Android Phone');
+    if (/Chrome/i.test(ua)){
+		if (/Android/i.test(ua)){
+    		alert('We are having issues with embedded forms on Chrome for Android. Redirecting you to the google forms website.');
+    		location.href='https://docs.google.com/forms/d/e/1FAIpQLSc-SQtGhGLMRsXU-n-Zco38dqsFSSTygP9C2NFctZtGZLkGkw/viewform?usp=sf_link';
+    	}
+    }
 }
 </script>
 
