@@ -10,10 +10,16 @@
 <link rel="stylesheet" href="https://www.chromeappliances.com/w3.css">
 <link rel="stylesheet" href="https://www.chromeappliances.com/w3-theme-blue.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
 <style>
       @media (max-width: 600px) {
         .navdesk {
           display: none;
+        }
+        .mycontainer{
+        	 background-color:#074b83;
         }
       }
       @media (min-width: 600px) {
@@ -21,8 +27,17 @@
           display: none;
         }
       }
+      .googfont{
+      	font-family:Old Standard TT, serif;
+      	font-size: 18px;
+      }
+      .mycontent{
+      	max-width:1050px;
+      	margin-left:auto;
+      	margin-right:auto;
+      }
 </style>
-<body>
+<body onload="showDivs(1);">
 
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
@@ -65,15 +80,38 @@
   <img src="https://www.chromeappliances.com/logo.jpeg" alt="Logo" width="288" height="104" onclick="window.location='https://www.chromeappliances.com/'" style="cursor:pointer;padding-bottom:7px;padding-top:7px;">  </div>
 </header>
 
-<div class="w3-row w3-center w3-padding-24">
-    <div class="w3-container">
-      <h2 class="w3-text-blue-gray">Under Construction... Coming Soon</h2>
-      <h3 class="w3-text-blue-gray"><a href="https://drive.google.com/file/d/1mVoKI8s9evv3WUs1RuSfy4rrPZfrbTH7/view?usp=sharing">but you may click here to download appliance</a></h3>
-      <i class="fa fa-exclamation-triangle w3-margin-bottom w3-text-theme" style="font-size:80px"></i>
-    </div>
+<div class="w3-container w3-content w3-center w3-padding-64">
+    <h2 class="w3-text-blue-gray" style="font-family:Old Standard TT, serif;">KDE Apps/Store</h2>
+    <br><a href="https://drive.google.com/file/d/1mVoKI8s9evv3WUs1RuSfy4rrPZfrbTH7/view?usp=sharing" class="w3-button w3-theme-dark">Download</a>
+    <br><br>
+<div class="w3-row mycontent">
+  <div class="w3-half w3-container mycontainer navdesk" style="text-align:center;">
+    <br>
+    <img src="https://www.chromeappliances.com/KDE.jpeg" height="251" width="383">
+    <br><br>
+  </div>
+  <div class="w3-half w3-container" style="text-align:left;">
+	 <br><h4 style="font-weight:bold;font-family:Old Standard TT, serif;" class="w3-wide">Appliance Includes</h5>  
+    <ul class="googfont"><li>Ubuntu 20.04</li><li>Discover App Store</li><li>Konsole</li><li>Kate</li><li>Dolphin File Browser</li><li>Okular</li><li>App Update Tool</li><li>Icon Refresh Tool</li></ul>
+    <h4 style="font-weight:bold;font-family:Old Standard TT, serif;" class="w3-wide">To Install:</h5>  
+    <ol class="googfont"><li>Turn on Linux Developer Environment from settings (Username: beta and disk size 15 GB)</li><li><a href="https://drive.google.com/file/d/1mVoKI8s9evv3WUs1RuSfy4rrPZfrbTH7/view?usp=sharing">Download the Appliance to restore</a></li><li>
+Restore your container (Developers > Linux Environment > Backup & Restore)</li></ol>
+  </div>
+</div>   
 </div>
+<h2 class="w3-center w3-text-blue-gray" style="font-family:Old Standard TT, serif;">Screenshots</h2><br>
+<div class="w3-content" style="max-width:1050px;position:relative;text-align:center;">
 
+<img class="mySlides w3-animate-opacity" src="sck1.png" style="width:100%">
+<img class="mySlides w3-animate-opacity" src="sck5.png" style="width:100%">
+<img class="mySlides w3-animate-opacity" src="sck2.png" style="width:100%">
+<img class="mySlides w3-animate-opacity" src="sck3.png" style="width:100%">
+<img class="mySlides w3-animate-opacity" src="sck4.png" style="width:100%">
 
+<a class="w3-button w3-hover-dark-grey" style="position:absolute;top:45%;left:0;background-color:#cce8fb;color:#30507f;font-size:25px;" onclick="plusDivs(-1)">&#10094;</a>
+<a class="w3-button w3-hover-dark-grey" style="position:absolute;top:45%;right:0;background-color:#cce8fb;color:#30507f;font-size:25px;" onclick="plusDivs(+1)">&#10095;</a>
+<a class="w3-button w3-hover-dark-grey" style="position:absolute;bottom:0%;background-color:#cce8fb;color:#30507f;font-size:25px;" onclick="zoompic()">&#128270;</a>
+</div>
 <hr>
 <!-- Footer -->
 <footer class="w3-container w3-theme-dark">
@@ -147,14 +185,18 @@ function plusDivs(n) {
 function showDivs(n) {
   var x = document.getElementsByClassName("mySlides");
   if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length} ;
+  else if (n < 1) {slideIndex = x.length}
+  else {slideIndex = n}
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";  
   }
   x[slideIndex-1].style.display = "block";  
 }
 
-showDivs(1);
+function zoompic(){
+	var x = document.getElementsByClassName("mySlides");
+	location.href=x[slideIndex-1].src;
+}
 
 // Progress Bars
 function move() {
