@@ -97,7 +97,7 @@
     <ul class="googfont"><li>Debian 11 (Bullseye)</li><li>KVM and Virtual Machine Manager</li><li>Wine/PlayOnLinux</li><li>Microsoft Fonts</li><li>App Update Tool</li><li>Icon Refresh Tool</li><li onclick="document.getElementById('id01').style.display='block'" style="cursor:pointer;text-decoration:underline;">Adobe Reader (Click for more info)</li></ul>
     <h4 style="font-weight:bold;font-family:Old Standard TT, serif;" class="w3-wide">To Install:</h5>  
     <ol class="googfont"><li onclick="document.getElementById('id02').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: Enable flags for virtual machine use</li><li>Turn on Linux Developer Environment from settings (Username: beta & Disk size: 25GB + any space needed for VM OS)</li><li><a href="https://drive.google.com/file/d/1Pj156VVcgZaYccjNVtl_9z38t9L2YnDS/view?usp=sharing">Download the Appliance to restore</a></li>
-    <li>Restore your container (Developers > Linux Environment > Backup & Restore)</li><li onclick="document.getElementById('id01').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: install Adobe Reader DC</li></ol>
+    <li>Restore your container (Developers > Linux Environment > Backup & Restore)</li><li onclick="document.getElementById('id01').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: install Adobe Reader DC</li><li onclick="document.getElementById('id03').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: How to Backup a windows Virtual Machine</li></ol>
   </div>
 </div>   
 </div>
@@ -134,6 +134,23 @@
         <ol><li>Type chrome://flags/ in your address bar </li><li>Enable: Crostini GPU Support & Scheduler Configuration</li></ol>
         <p>You do not need to do any of this if you are only planning to use Wine/PlayOnLinux.</p>
         <p style="font-weight: bold;text-decoration: underline;">Also Note: Launch the Appliance Update app once you load the container. This will do an internal check to see if running a VM is advisable.</p>
+      </div>
+      <footer class="w3-container w3-theme-dark">
+        <p>&nbsp;</p>
+      </footer>
+    </div>
+</div>
+<div id="id03" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-dark"> 
+        <span onclick="document.getElementById('id03').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h5>Virtual Machine Backup Process</h5>
+      </header>
+      <div class="w3-padding">
+        <p>After the VM is installed back up can be tricky. I do not recommend backing the entire Linux Container / Appliance since restoring might not work but you can give it a try.</p>
+	<p>Instead I would recommended to backup just the VM itself and zip it. Reload when needed in the future.</p>
+        <ol><li>Copy image from /var/lib/libvirt/images</li><li>virsh dumpxml {{VMNAME}} > domxml.xml</li><li>When restoring just Paste the Image back into /var/lib/libvirt/images</li><li>Then run virsh define domxml.xml</li></ol>
       </div>
       <footer class="w3-container w3-theme-dark">
         <p>&nbsp;</p>
