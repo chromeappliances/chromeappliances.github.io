@@ -94,10 +94,10 @@
   </div>
   <div class="w3-half w3-container" style="text-align:left;">
 	 <br><h4 style="font-weight:bold;font-family:Old Standard TT, serif;" class="w3-wide">Appliance Includes</h5>  
-    <ul class="googfont"><li>Debian 11 (Bullseye)</li><li>KVM and Virtual Machine Manager</li><li>Wine/PlayOnLinux</li><li>Microsoft Fonts</li><li>App Update Tool</li><li>Icon Refresh Tool</li><li onclick="document.getElementById('id01').style.display='block'" style="cursor:pointer;text-decoration:underline;">Adobe Reader (Click for more info)</li></ul>
+    <ul class="googfont"><li>Debian 11 (Bullseye)</li><li>KVM and Virtual Machine Manager</li><li>Wine/PlayOnLinux</li><li>Microsoft Fonts</li><li>App Update Tool</li><li>Icon Refresh Tool</li><li onclick="document.getElementById('id01').style.display='block'" style="cursor:pointer;text-decoration:underline;">Adobe Reader (Click for more info)</li><li onclick="document.getElementById('id11').style.display='block'" style="cursor:pointer;text-decoration:underline;">Amazon Kindle PC version (Click for more info)</li></ul>
     <h4 style="font-weight:bold;font-family:Old Standard TT, serif;" class="w3-wide">To Install:</h5>  
     <ol class="googfont"><li onclick="document.getElementById('id02').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: Enable flags for virtual machine use</li><li>Turn on Linux Developer Environment from settings (Username: beta & Disk size: 25GB + any space needed for VM OS)</li><li><a href="https://drive.google.com/file/d/1Pj156VVcgZaYccjNVtl_9z38t9L2YnDS/view?usp=sharing">Download the Appliance to restore</a></li>
-    <li>Restore your container (Developers > Linux Environment > Backup & Restore)</li><li onclick="document.getElementById('id01').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: install Adobe Reader DC</li><li onclick="document.getElementById('id03').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: How to Backup a windows Virtual Machine</li></ol>
+    <li>Restore your container (Developers > Linux Environment > Backup & Restore)</li><li onclick="document.getElementById('id01').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: install Adobe Reader DC</li><li onclick="document.getElementById('id11').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: install Amazon Kindle for PC</li><li onclick="document.getElementById('id03').style.display='block'" style="cursor:pointer;text-decoration:underline;">Optional: How to Backup a windows Virtual Machine</li></ol>
   </div>
 </div>   
 </div>
@@ -116,6 +116,25 @@
         <ol><li>Open PlayOnLinux, Click install and search for Adobe Reader DC</li><li>Select the installation file in your Linux home directory and follow prompts</li>
         <li>After installation select the Application and click the Configure button</li><li>Under components look for riched20 and install it</li></ol>
         <p>There is no substitute for Adobe Reader DC desktop version. This is the only tool that allows you properly fill out XFA PDF forms and see error messages if any. These forms are used by a lot of government agencies and other organizations.</p>
+      </div>
+      <footer class="w3-container w3-theme-dark">
+        <p>&nbsp;</p>
+      </footer>
+    </div>
+</div>
+<div id="id11" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-top">
+      <header class="w3-container w3-theme-dark"> 
+        <span onclick="document.getElementById('id11').style.display='none'"
+        class="w3-button w3-display-topright">&times;</span>
+        <h5>Amazon Kindle for PC - Installation Instructions</h5>
+      </header>
+      <div class="w3-padding">
+        <p>Please Note: After you install windows software with Wine/PlayOnLinux, you cannot backup/restore that particular instance of the Appliance. DO NOT Worry, this will not interfere with daily use nor does it stop you from restoring other appliances.</p>
+        <p>Therefore every time you load the appliance you have to perform an extra step to install Amazon Kindle for PC.</p>
+        <p>Steps to install Amazon Kindle for PC</p>
+        <ol><li>Open PlayOnLinux, Click install and search for Kindle</li><li>Select the installation file in your Linux home directory and follow prompts</li>
+        <li>Optional: See the Readme file if you want to install components for DeDRM Tools</li></ol>
       </div>
       <footer class="w3-container w3-theme-dark">
         <p>&nbsp;</p>
